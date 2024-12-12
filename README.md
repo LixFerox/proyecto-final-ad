@@ -27,7 +27,11 @@ El proyecto está dividido en 2 carpetas
 
 [Página web](/pagina-web)
 
-## Como instalar las dependencias del proyecto
+## Como instalar el proyecto
+Primero descargaremos el repositorio
+```sh
+git clone git@github.com:LixFerox/proyecto-final-ad.git
+```
 Para instalar las dependencias de la página de [Astro](https://astro.build/) pondremos los siguientes comandos
 ```sh
 npm install
