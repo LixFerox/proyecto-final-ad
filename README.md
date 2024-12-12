@@ -2,7 +2,7 @@
 Proyecto final de Primera Evaluación para la asignatura de Acceso a Datos
 
 ## Descripción
-Este proyecto podrás realizar consultas a las diferentes tablas que hay en la [Base de datos](/codigo-java/Proyecto Final/company_database.db) , también se realizarán 3 consultas que se han indicado en el enunciado del ejercicio
+Este proyecto permite realizar consultas a las diferentes tablas que hay en la [Base de datos](codigo-java/Proyecto%20Final/company_database.db). También se realizarán 3 consultas que se han indicado en el enunciado del ejercicio.
 
 ### Tablas
 
