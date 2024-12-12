@@ -1,0 +1,56 @@
+---
+import { getConnection } from "../../scripts/connection";
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import Main from "../../layouts/Main.astro";
+import type { Departments } from "../../variables/interfaces";
+
+const query = "SELECT * FROM departments";
+const customers: Departments[] = (await getConnection(query)) as Departments[];
+const table = "Departments";
+const columns = ["department_id", "department_name", "manager_id"];
+---
+
+<Layout title={table}>
+    <Header />
+    <Main>
+        <div class="w-full min-h-full flex flex-col items-center gap-5 p-4">
+            <h1 class="sm:text-2xl text-base font-semibold mb-5">
+                Tabla {table}
+            </h1>
+            <article class="sm:w-10/12 w-full flex justify-center items-center">
+                <table class="w-full">
+                    <tr class="text-center font-bold">
+                        {
+                            columns.map((column) => (
+                                <td class="border border-black">{column}</td>
+                            ))
+                        }
+                    </tr>
+                    {
+                        customers.map((customer) => (
+                            <tr class="text-center ">
+                                <td class="border border-black">
+                                    {customer.department_id}
+                                </td>
+                                <td class="border border-black">
+                                    {customer.department_name}
+                                </td>
+                                <td class="border border-black">
+                                    {customer.manager_id}
+                                </td>
+                            </tr>
+                        ))
+                    }
+                </table>
+            </article>
+            <a
+                href="/"
+                class="font-semibold px-8 py-2 transition duration-300 ease-in-out hover:scale-110 rounded-lg bg-sky-300"
+                >Volver</a
+            >
+        </div>
+    </Main>
+    <Footer />
+</Layout>

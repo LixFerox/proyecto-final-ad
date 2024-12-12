@@ -1,0 +1,46 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import Main from "../layouts/Main.astro";
+import Section from "../components/Section.astro";
+---
+
+<Layout title="Inicio">
+    <Header />
+    <Main>
+        <div class="w-full min-h-full flex flex-col items-center gap-5 p-4">
+            <h1 class="sm:text-2xl text-base font-semibold mb-5">
+                Tablas de la Base de Datos
+            </h1>
+            <article
+                class="w-10/12 items-center justify-center grid sd:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 mb-5"
+            >
+                <Section href="/tables/customers" title="Tabla Customers" />
+                <Section href="/tables/departments" title="Tabla Departments" />
+                <Section
+                    href="/tables/employeeprojects"
+                    title="Tabla Employee_Projects"
+                />
+                <Section
+                    href="/tables/employeesrealistic"
+                    title="Tabla Employees_Realistic"
+                />
+                <Section href="/tables/orderitems" title="Tabla Order_Items" />
+                <Section href="/tables/orders" title="Tabla Orders" />
+                <Section href="/tables/projects" title="Tabla Projects" />
+            </article>
+            <h1 class="sm:text-2xl text-sm font-semibold mb-5">
+                Consultas a la Base de Datos
+            </h1>
+            <article
+                class="w-10/12 items-center justify-center grid sd:grid-cols-2 lg:grid-cols-3 grid-cols-1 gap-8 mb-5"
+            >
+                <Section href="/querys/query1" title="Consulta 1" />
+                <Section href="/querys/query2" title="Consulta 2" />
+                <Section href="/querys/query3" title="Consulta 3" />
+            </article>
+        </div>
+    </Main>
+    <Footer />
+</Layout>

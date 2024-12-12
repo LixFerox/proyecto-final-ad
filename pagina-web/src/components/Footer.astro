@@ -1,0 +1,27 @@
+---
+import Year from "../components/Year.svelte";
+---
+
+<footer
+    class="w-full h-10 flex sm:flex-row flex-col justify-center items-center sm:gap-4 sm:text-base text-sm bg-sky-500"
+>
+    <p>
+        &copy
+        <Year client:visible />
+    </p>
+    <div class="flex flex-row gap-2">
+        <p>
+            Hecho por
+            <div
+                class="transition duration-300 ease-in-out hover:scale-110 hover:underline hover:text-gray-200"
+            >
+                <a
+                    href="https://github.com/LixFerox"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="font-semibold">LixFerox</a
+                >
+            </div>
+        </p>
+    </div>
+</footer>
