@@ -28,7 +28,7 @@ El proyecto está dividido en 2 carpetas
 [Página web](/pagina-web)
 
 ## Como instalar las dependencias del proyecto
-Para instalar las dependencias de la página de [Atro](https://astro.build/) pondremos los siguientes comandos
+Para instalar las dependencias de la página de [Astro](https://astro.build/) pondremos los siguientes comandos
 ```sh
 npm install
 ```
