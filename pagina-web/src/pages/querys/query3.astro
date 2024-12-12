@@ -16,7 +16,7 @@ const query = `SELECT projects.project_id, projects.project_name, projects.budge
                ORDER BY projects.project_id ASC`;
 
 const customers: Query3[] = (await getConnection(query)) as Query3[];
-const table = "Query2";
+const table = "Query3";
 const columns = [
     "project_id",
     "project_name",
