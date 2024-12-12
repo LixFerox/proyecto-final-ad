@@ -36,7 +36,3 @@ Para instalar las dependencias de la página de [Astro](https://astro.build/) po
 ```sh
 npm install
 ```
-Luego de instalar las dependencias de Astro instalaremos sqlite
-```sh
-npm install sqlite3
-```
