@@ -22,12 +22,12 @@ public class Main {
              Scanner teclado=new Scanner(System.in);
              do {
                  System.out.println("Selecciona una opción:\n-0: Salir\n-1: Tabla customers\n-2: Tabla departments\n-3: Tabla employee_projects\n-4: Tabla employees_realistic\n-5: Tabla order_items\n-6: Tabla orders\n-7: Tabla projects\n-c1: Consulta 1\n-c2: Consulta 2\n-c3: Consulta 3");
-                 String opciones=teclado.nextLine();
-                 switch (opciones.toUpperCase().trim()){
+                 String opciones = teclado.nextLine();
+                 switch (opciones.toUpperCase().trim()) {
                      case "0":
                          estado.close();
                          conn.close();
-                         finDelPrograma=true;
+                         finDelPrograma = true;
                          System.out.println("Has salido del programa!");
                          break;
                      case "1":
@@ -64,14 +64,14 @@ public class Main {
                          System.err.println("No has seleccionado ninguna opción");
 
                  }
-             }while (!finDelPrograma);
+             } while (!finDelPrograma);
              teclado.close();
 
          } catch (Exception e) {
              System.out.println("No se ha podido conectar con la Base de Datos");
          }
      }
-     public static void case1(Statement estado) throws SQLException {
+     private static void case1(Statement estado) throws SQLException {
         tabla="customers";
         System.out.println("Viendo la tabla "+tabla);
          ResultSet resultado = estado.executeQuery("SELECT * FROM "+tabla);
@@ -91,7 +91,7 @@ public class Main {
          System.out.println("------------------------------------------------------------------------");
          resultado.close();
     }
-    public static void case2(Statement estado) throws SQLException {
+    private static void case2(Statement estado) throws SQLException {
         tabla="departments";
         System.out.println("Viendo la tabla "+tabla);
         ResultSet resultado = estado.executeQuery("SELECT * FROM "+tabla);
@@ -109,7 +109,7 @@ public class Main {
         System.out.println("--------------------------------------------");
         resultado.close();
     }
-    public static void case3(Statement estado) throws SQLException {
+    private static void case3(Statement estado) throws SQLException {
         tabla="employee_projects";
         System.out.println("Viendo la tabla "+tabla);
         ResultSet resultado = estado.executeQuery("SELECT * FROM "+tabla);
@@ -129,7 +129,7 @@ public class Main {
         System.out.println("---------------------------------------------------------------");
         resultado.close();
     }
-    public static void case4(Statement estado) throws SQLException {
+    private static void case4(Statement estado) throws SQLException {
         tabla="employees_realistic";
         System.out.println("Viendo la tabla "+tabla);
         ResultSet resultado = estado.executeQuery("SELECT * FROM "+tabla);
@@ -157,7 +157,7 @@ public class Main {
         System.out.println("---------------------------------------------------------------------------------------------------------------------------");
         resultado.close();
     }
-    public static void case5(Statement estado) throws SQLException {
+    private static void case5(Statement estado) throws SQLException {
         tabla="order_items";
         System.out.println("Viendo la tabla "+tabla);
         ResultSet resultado = estado.executeQuery("SELECT * FROM "+tabla);
@@ -179,7 +179,7 @@ public class Main {
         System.out.println("--------------------------------------------------------------------------");
         resultado.close();
     }
-    public static void case6(Statement estado) throws SQLException {
+    private static void case6(Statement estado) throws SQLException {
         tabla="orders";
         System.out.println("Viendo la tabla "+tabla);
         ResultSet resultado = estado.executeQuery("SELECT * FROM "+tabla);
@@ -199,7 +199,7 @@ public class Main {
         System.out.println("----------------------------------------------");
         resultado.close();
     }
-    public static void case7(Statement estado) throws SQLException {
+    private static void case7(Statement estado) throws SQLException {
         tabla="projects";
         System.out.println("Viendo la tabla "+tabla);
         ResultSet resultado = estado.executeQuery("SELECT * FROM "+tabla);
@@ -224,7 +224,7 @@ public class Main {
         System.out.println("------------------------------------------------------------------------------------------------");
         resultado.close();
     }
-    public static void casec1(Statement estado) throws SQLException {
+    private static void casec1(Statement estado) throws SQLException {
         System.out.println("Realizando la consulta 1");
         tabla="order_items";
         ResultSet resultado = estado.executeQuery(consultas.get(0));
@@ -240,11 +240,12 @@ public class Main {
                     first_name,
                     last_name,
                     total_salary);
+
         }
         System.out.println("-----------------------------------------------------------------------");
         resultado.close();
     }
-    public static void casec2(Statement estado) throws SQLException {
+    private static void casec2(Statement estado) throws SQLException {
         System.out.println("Realizando la consulta 2");
         ResultSet resultado = estado.executeQuery(consultas.get(1));
         System.out.println("project_id | project_name                | budget      | total");
@@ -263,7 +264,7 @@ public class Main {
         System.out.println("--------------------------------------------------------------");
         resultado.close();
     }
-    public static void casec3(Statement estado) throws SQLException {
+    private static void casec3(Statement estado) throws SQLException {
         System.out.println("Realizando la consulta 3");
         ResultSet resultado = estado.executeQuery(consultas.get(2));
         System.out.println("project_id | project_name                | budget      | total        | project_fraction");
@@ -284,7 +285,7 @@ public class Main {
         System.out.println("----------------------------------------------------------------------------------------");
         resultado.close();
     }
-    public static void agregarConsultas(){
+    private static void agregarConsultas(){
         String consulta1="SELECT employee_projects.employee_id, employees_realistic.first_name, employees_realistic.last_name, ROUND((employees_realistic.salary/1900)*employee_projects.hours_worked) AS total_salary " +
                 "FROM employee_projects " +
                 "INNER JOIN employees_realistic " +
